@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LGA Results</title>
+</head>
+<body>
+    <h1>Summed Results for LGAs</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        <label for="lga_id">Select LGA:</label>
+        <select id="lga_id" name="lga_id">
+            <option value="19">19</option>
+            <option value="22">22</option>
+        </select>
+        <button type="submit">Get Results</button>
+    </form>
+    
+    {% if results %}
+        <h2>Results for LGA: {{ lga_name }}</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Party</th>
+                    <th>Total Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for result in results %}
+                    <tr>
+                        <td>{{ result.party_abbreviation }}</td>
+                        <td>{{ result.total_score }}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="2">No results found.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</body>
+</html>
