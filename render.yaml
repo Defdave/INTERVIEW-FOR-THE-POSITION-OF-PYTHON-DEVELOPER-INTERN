@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: election_results
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: "gunicorn election_results.wsgi:application"
+    envVars:
+      - key: mysql-363852f9-bincomphptest.l.aivencloud.com
+        fromDatabase:
+          name: defaultdb
+          property: connectionString
+      - key: django-insecure-__1s%-uzo4mo-*+t%82uo+3j(meyhosj!dpiqw8dn=!#dj#ord
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
