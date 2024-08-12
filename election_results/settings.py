@@ -86,16 +86,16 @@ WSGI_APPLICATION = 'election_results.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'defaultdb',
-        'USER': 'avnadmin',
-        'PASSWORD': 'AVNS_zttULB1ct853XDCsGkm',
-        'HOST': 'mysql-363852f9-bincomphptest.l.aivencloud.com',
-        'PORT': '13674'
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'defaultdb',
+#         'USER': 'avnadmin',
+#         'PASSWORD': 'AVNS_zttULB1ct853XDCsGkm',
+#         'HOST': 'mysql-363852f9-bincomphptest.l.aivencloud.com',
+#         'PORT': '13674'
+#     }
+# }
 
 
 # Password validation
